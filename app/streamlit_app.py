@@ -265,6 +265,25 @@ custom_css = """
     .profile-role { color: #9fb6ff; font-size: 0.85em; margin-bottom: 8px }
     .profile-email { color: #cbd5e1; font-size: 0.78em; margin-bottom: 8px }
     .profile-actions button { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: #cbd5e1; padding: 8px 12px; border-radius: 8px; margin: 4px }
+
+    /* Avatar image when uploaded */
+    .avatar-img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 8px; box-shadow: 0 6px 18px rgba(59,130,246,0.18); }
+
+    /* Style sidebar buttons within profile card */
+    [data-testid="stSidebar"] .profile-card .stButton>button {
+        background: transparent !important;
+        border: 1px solid rgba(255,255,255,0.06) !important;
+        color: #cbd5e1 !important;
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        margin: 4px !important;
+        font-weight: 600 !important;
+    }
+
+    [data-testid="stSidebar"] .profile-card .stButton>button:hover {
+        background: rgba(59,130,246,0.08) !important;
+        border-color: rgba(59,130,246,0.18) !important;
+    }
 </style>
 """
 
