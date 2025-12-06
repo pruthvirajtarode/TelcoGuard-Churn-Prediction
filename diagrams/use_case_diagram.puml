@@ -1,0 +1,46 @@
+@startuml
+left to right direction
+
+' Styling to make the use-case diagram visually appealing in presentations
+skinparam backgroundColor #071025
+skinparam shadowing false
+skinparam handwritten false
+skinparam actorStyle stick
+skinparam usecaseBackgroundColor #0b1220
+skinparam usecaseBorderColor #60a5fa
+skinparam usecaseFontColor #dbeafe
+skinparam sequenceArrowColor #94a3b8
+skinparam defaultFontName Arial
+
+actor Client as C
+actor "Data Engineer" as DE
+actor "Data Scientist" as DS
+
+package "TelcoGuard" {
+  usecase "View Dashboard" as UC1
+  usecase "Run Prediction" as UC2
+  usecase "Batch Predictions" as UC3
+  usecase "Train Model" as UC4
+  usecase "View Model Metrics" as UC5
+  usecase "Manage Deployments" as UC6
+}
+
+C --> UC1
+C --> UC2
+C --> UC3
+DE --> UC4
+DE --> UC6
+DS --> UC5
+DS --> UC4
+
+note right of UC1
+  Client can view dashboards,
+  filter segments, and export
+end note
+
+note right of UC4
+  Data Engineer triggers training,
+  reviews logs, and deploys
+end note
+
+@enduml

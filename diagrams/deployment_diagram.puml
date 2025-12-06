@@ -1,0 +1,17 @@
+@startuml
+title Deployment Diagram — TelcoGuard
+
+node "Client Browser" as Client
+node "Streamlit Host" as StreamlitHost
+node "API Host (AKS/ACI)" as APIHost
+node "Azure ML" as AzureML
+node "Postgres" as Postgres
+node "Blob Storage" as Blob
+
+Client --> StreamlitHost : HTTP
+StreamlitHost --> APIHost : HTTPS / gRPC
+APIHost --> AzureML : model inference
+APIHost --> Postgres : read/write
+APIHost --> Blob : read knowledge/data
+
+@enduml

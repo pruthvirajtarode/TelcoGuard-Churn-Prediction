@@ -1,0 +1,17 @@
+@startuml
+title Data Flow — TelcoGuard
+
+actor SourceSystem
+database RawStorage
+database ProcessedStorage
+database Warehouse
+
+SourceSystem -> RawStorage : Upload raw CSVs
+RawStorage -> ProcessedStorage : ETL / Cleaning
+ProcessedStorage -> Warehouse : Aggregation / Feature Stores
+Warehouse -> ModelTraining : provide training data
+ModelTraining -> ModelRegistry : save model
+ModelRegistry -> Serving : provide model for inference
+Serving -> Dashboard : show predictions
+
+@enduml

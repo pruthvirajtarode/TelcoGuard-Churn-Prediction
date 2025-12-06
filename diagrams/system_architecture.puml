@@ -1,0 +1,33 @@
+@startuml
+title TelcoGuard — System Architecture
+
+package "Frontend" {
+  [Streamlit UI] as UI
+}
+
+package "API & Services" {
+  [FastAPI Model API] as API
+  [GenAI Service] as GenAI
+}
+
+package "Data & Storage" {
+  database "OLTP DB (Postgres)" as DB
+  database "Analytics Warehouse" as Warehouse
+  folder "Blob Storage" as Blob
+}
+
+package "MLOps" {
+  [Azure ML Workspace] as AML
+  [Model Registry] as Registry
+  [CI/CD (GitHub Actions)] as CICD
+}
+
+UI --> API : user requests
+API --> Registry : fetch model
+API --> GenAI : call for insights
+GenAI --> Blob : read knowledge base
+API --> Warehouse : analytics queries
+CICD --> AML : deploy models
+AML --> Registry : register model
+
+@enduml

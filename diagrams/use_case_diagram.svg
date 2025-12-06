@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <style>
+    .bg{fill:#071025}
+    .title{fill:#fff;font-family:Arial;font-size:18px;font-weight:bold}
+    .actor{fill:#9fb6ff;font-family:Arial;font-size:13px}
+    .usecase{fill:#0b1220;stroke:#60a5fa;stroke-width:2}
+    .uc-text{fill:#dbeafe;font-family:Arial;font-size:13px}
+  </style>
+  <rect width="100%" height="100%" class="bg" />
+  <text x="20" y="30" class="title">TelcoGuard — Use Case Diagram</text>
+
+  <!-- Actors -->
+  <text x="40" y="80" class="actor">Client</text>
+  <text x="40" y="140" class="actor">Data Engineer</text>
+  <text x="40" y="200" class="actor">Data Scientist</text>
+
+  <!-- Use cases -->
+  <ellipse cx="520" cy="80" rx="150" ry="30" class="usecase" />
+  <text x="450" y="85" class="uc-text">View Dashboard</text>
+
+  <ellipse cx="520" cy="140" rx="150" ry="30" class="usecase" />
+  <text x="470" y="145" class="uc-text">Run Prediction</text>
+
+  <ellipse cx="520" cy="200" rx="150" ry="30" class="usecase" />
+  <text x="450" y="205" class="uc-text">Train Model / Manage Deployments</text>
+
+  <!-- Lines -->
+  <line x1="110" y1="80" x2="370" y2="80" stroke="#94a3b8" stroke-width="2" marker-end="url(#a)" />
+  <line x1="110" y1="140" x2="370" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#a)" />
+  <line x1="110" y1="200" x2="370" y2="200" stroke="#94a3b8" stroke-width="2" marker-end="url(#a)" />
+
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+</svg>

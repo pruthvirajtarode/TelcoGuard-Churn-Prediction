@@ -1,0 +1,16 @@
+@startuml
+title Prediction Flow — Sequence Diagram
+actor User
+participant "Streamlit UI" as UI
+participant "FastAPI Model API" as API
+participant "Model Registry" as Registry
+participant "GenAI Service" as GenAI
+
+User -> UI: submit customer data
+UI -> API: POST /predict
+API -> Registry: load best model
+API -> Model: predict()
+API -> GenAI: request explanation
+GenAI -> API: explanation
+API -> UI: result + confidence + explanation
+@enduml

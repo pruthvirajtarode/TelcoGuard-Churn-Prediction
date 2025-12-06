@@ -1,0 +1,39 @@
+@startuml
+title TelcoGuard — Core Class Diagram
+
+class StreamlitApp {
+  +load_model()
+  +predict(input)
+  +render_dashboard()
+}
+
+class FeatureEngineering {
+  +load_data()
+  +create_features()
+  +save_engineered()
+}
+
+class Trainer {
+  +train()
+  +evaluate()
+  +save_model()
+}
+
+class GenAIService {
+  +analyze_customer()
+  +generate_action_plan()
+}
+
+class AzureMLOps {
+  +register_model()
+  +deploy()
+  +monitor()
+}
+
+StreamlitApp --> Trainer : uses
+StreamlitApp --> GenAIService : uses
+Trainer --> FeatureEngineering : uses
+Trainer --> AzureMLOps : registers
+GenAIService --> AzureMLOps : fetch model
+
+@enduml

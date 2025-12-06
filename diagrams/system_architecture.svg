@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <style>
+    .box{fill:#0f172a;stroke:#3b82f6;stroke-width:2;rx:8; ry:8}
+    .text{fill:#e6eef8;font-family:Arial, Helvetica, sans-serif;font-size:14px}
+    .title{fill:#ffffff;font-size:18px;font-weight:bold}
+    .arrow{stroke:#94a3b8;stroke-width:2;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="900" height="420" fill="#071025" />
+  <text x="20" y="30" class="title">TelcoGuard — System Architecture</text>
+
+  <!-- Frontend -->
+  <rect x="40" y="60" width="220" height="80" rx="8" ry="8" class="box" />
+  <text x="60" y="100" class="text">Streamlit UI</text>
+  <text x="60" y="120" class="text">(app/streamlit_app.py)</text>
+
+  <!-- API & Services -->
+  <rect x="340" y="40" width="220" height="120" rx="8" ry="8" class="box" />
+  <text x="360" y="70" class="text">FastAPI Model API</text>
+  <text x="360" y="90" class="text">GenAI Service</text>
+
+  <!-- Data & Storage -->
+  <rect x="640" y="40" width="220" height="120" rx="8" ry="8" class="box" />
+  <text x="660" y="70" class="text">OLTP DB (Postgres)</text>
+  <text x="660" y="90" class="text">Analytics Warehouse</text>
+  <text x="660" y="110" class="text">Blob Storage</text>
+
+  <!-- MLOps -->
+  <rect x="340" y="220" width="520" height="140" rx="8" ry="8" class="box" />
+  <text x="360" y="250" class="text">Azure ML Workspace</text>
+  <text x="360" y="270" class="text">Model Registry</text>
+  <text x="360" y="290" class="text">CI/CD (GitHub Actions)</text>
+
+  <!-- Arrows -->
+  <line x1="260" y1="100" x2="340" y2="100" class="arrow" />
+  <line x1="560" y1="100" x2="640" y2="100" class="arrow" />
+  <line x1="450" y1="160" x2="450" y2="220" class="arrow" />
+  <line x1="700" y1="160" x2="700" y2="220" class="arrow" />
+</svg>
